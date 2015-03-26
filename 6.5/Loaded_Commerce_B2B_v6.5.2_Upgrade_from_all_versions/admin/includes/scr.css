@@ -1,0 +1,99 @@
+.tabcontent {
+	 padding: 1em; /* acts little ike cellpadding, so dont touch this */
+	 clear: both;
+	 background: #ffffff; /* Background color */
+	 border-top: 1px solid #dddddd;
+	 border-bottom: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
+	 border-right: 1px solid #dddddd; 
+  color: #000000; /* font color */
+	 font-size: 12px; /* font size -- does not affect standard view */
+}
+
+li{
+ 	list-style-type: none;
+	 margin: 0px;
+	 padding: 0px;
+}
+
+#mainnavtabbed0 li, #mainnavtabbed1 li, #mainnavtabbed2 li, #mainnavtabbed3 li, #mainnavtabbed4 li {
+	 margin-left: 0px; /* distance between tabs */
+	 margin-bottom: 0px;
+	 text-align: center; /* alignment of text within tabs */
+	 float: left;
+	 width: 100px; /* width of actual tab */
+	 margin-bottom: 0px;
+}
+
+/* this is the active tab class, just as below */
+#mainnavtabbed0 li a, #mainnavtabbed1 li a, #mainnavtabbed2 li a, #mainnavtabbed3 li a, #mainnavtabbed4 li a {
+	 padding: 3px; /* padding around the text within the tabs */
+	 border-left: 0px solid #cccccc; /* border of the inactive tab */
+	 border-top: 0px solid #cccccc; /* border of the inactive tab */
+	 border-bottom: none;
+	 border-right: 0px solid #cccccc; /* border of the inactive tab */
+	 background-image: url(../images/icons/tab.png);
+	 /*background: none;*/
+	 display: block;
+	 color: #000000;
+	 text-decoration: bold;
+	 font: 13px Arial, Helvetica, sans-serif;
+}
+
+/* the folowing section deals with the tabbed button when active */
+#mainnavtabbed0 li a:active, #mainnavtabbed0 li a.tabon:hover, #mainnavtabbed1 li a:active, #mainnavtabbed1 li a.tabon:hover, #mainnavtabbed2 li a:active, #mainnavtabbed2 li a.tabon:hover, #mainnavtabbed3 li a:active, #mainnavtabbed3 li a.tabon:hover, #mainnavtabbed4 li a:active, #mainnavtabbed4 li a.tabon:hover {
+	 background-image: url(../images/icons/tab_active.png);
+	 color: #000000; /* Font color on tab */
+	 /*background: #FFFFCC; /* Tab Color */
+	 border-left: 0px solid #aaa;
+	 border-top: 0px solid #aaa;
+	 border-bottom: none;
+	 border-right: 0px solid #aaa;
+}
+
+/* the folowing section deals with the tabbed button when hovered */
+#mainnavtabbed0 li a:hover, #mainnavtabbed1 li a:hover, #mainnavtabbed2 li a:hover, #mainnavtabbed3 li a:hover, #mainnavtabbed4 li a:hover {
+	 background-image: url(../images/icons/tab_active.png);
+	 color:#000000; /* Font color on hover */
+	 /*background: /* #CCFFFF;*/
+	 border-left: 0px solid #cccccc;
+	 border-top: 0px solid #cccccc;
+	 border-bottom: none;
+	 border-right: 0px solid #cccccc;
+}
+
+/*h2{
+	 margin: 0;
+	 font-size: 120%;
+	 font-family: "trebuchet ms", verdana, sans-serif;
+}
+
+h1{
+	 margin: 0;
+	 font-size: 150%;
+	 color: #ffffff;
+	 font-family: "trebuchet ms", verdana, sans-serif;
+}*/
+
+hr {
+	 color: #cccccc;
+  background-color: #cccccc;
+	 height: 1px;
+	 border: none;
+}
+
+#domtabs {
+  display: none
+}
+.domtabsFrist {
+  border-left: 1px solid #cccccc; 
+  border-top: 1px solid #cccccc; 
+  border-right: 1px solid #cccccc;
+}
+.domtabsOther {
+  border-top: 1px solid #cccccc; 
+  border-right: 1px solid #cccccc;
+}
+.active {
+  background: #cccccc;
+}
