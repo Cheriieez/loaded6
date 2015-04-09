@@ -1,0 +1,24 @@
+/*
+  $Id: slideshow.css 1739 2007-12-20 00:52:16Z hpdl $
+
+  osCommerce, Open Source E-Commerce Solutions
+  http://www.oscommerce.com
+
+  Copyright (c) 2003 osCommerce
+
+  Released under the GNU General Public License
+*/
+
+/*--- Beginning of Addition Products Cycle Slideshow ---*/
+.ProductsCycleSlideshowWrapper { width: 504px; overflow: hidden; text-align:center; align:center;}
+.ProductsCycleSlideshow { height: 310px; width: 500px; padding:0; margin:0; border: 0px dotted #D3D3D3; overflow: hidden; background-color:#fff; align:center; text-align:center; }
+.PCSChild { height: 296px; width: 486px; padding: 7px; text-text-align:center; top:0; left:0;  text-align:center; align:center;}
+.PCSChild  a { text-decoration: none; color:000; text-align:center; align:center;}
+.PCSChild  a img { border: none; border-width:0px; text-align:center; align:center;}
+.PCSOutput { font-size: 11px; line-height: 1.2; color: #5E5E5E; text-align:center; align:center;}
+.PCSOutput a { color:#000;  text-align:center; align:center;}
+.PCSPager { margin:7px;  text-align:center; align:center;}
+.PCSPager a { border: 1px solid #bbc3d3; background: #fff; color:#bbc3d3; text-decoration: none; margin: 0 5px; padding: 3px 5px; font-size:12px; text-align:center;}
+.PCSPager a.activeSlide { border: 1px solid #000; background: #bbc3d3; color:#000; text-align:center; align:center;}
+.PCSPager a:focus { outline: none;  text-align:center; align:center;}
+/*--- End of Addition Products Cycle Slideshow ---*/
