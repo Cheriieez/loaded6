@@ -121,6 +121,14 @@ if (isset($_GET['action'])) {
     $order = new order($oID);
     $status = tep_db_prepare_input($_POST['status']);
     $comments = tep_db_prepare_input($_POST['comments']);
+    
+    $oday = tep_db_prepare_input($_POST['day']);
+    $omonth = tep_db_prepare_input($_POST['month']);
+    $oyear = tep_db_prepare_input($_POST['year']);
+        
+    $date_purchased = $oyear;
+    $date_purchased .= (strlen($omonth) == 1) ? '0' . $omonth : $omonth;
+    $date_purchased .= (strlen($oday) == 1) ? '0' . $oday : $oday;
 
     // Update Order Info
     $UpdateOrders = "update " . TABLE_ORDERS . " set
@@ -133,7 +141,8 @@ if (isset($_GET['action'])) {
       customers_postcode = '" . tep_db_input($_POST['update_customer_postcode']) . "',
       customers_country = '" . tep_db_input(stripslashes($_POST['update_customer_country'])) . "',
       customers_telephone = '" . tep_db_input($_POST['update_customer_telephone']) . "',
-      customers_email_address = '" . strtolower(tep_db_input($_POST['update_customer_email_address'])) . "',";
+      customers_email_address = '" . strtolower(tep_db_input($_POST['update_customer_email_address'])) . "',
+      date_purchased = '" . tep_db_input($date_purchased) . "',";
 
     if($SeparateBillingFields)
     {
@@ -939,6 +948,8 @@ if(isset($add_product_options)){
 <link rel="stylesheet" type="text/css" href="includes/stylesheet-ie.css">
 <![endif]-->
 <script language="javascript" src="includes/general.js"></script>
+  <link rel="stylesheet" type="text/css" href="includes/javascript/calendar.css">
+  <script language="JavaScript" src="includes/javascript/calendarcode.js"></script>
 <script language="javascript"><!--
 function popupWindow(url) {
   window.open(url,'popupWindow','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,copyhistory=no,width=650,height=500,screenX=150,screenY=150,top=150,left=150')
@@ -948,6 +959,7 @@ function popupWindow(url) {
 <script type="text/javascript" src="includes/menu.js"></script>
 </head>
 <body marginwidth="0" marginheight="0" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" bgcolor="#FFFFFF">
+<div id="popupcalendar" class="text"></div>
 <!-- header //-->
 <?php require(DIR_WS_INCLUDES . 'header.php'); ?>
 <!-- header_eof //-->
@@ -1177,6 +1189,10 @@ function popupWindow(url) {
 <!-- Begin Phone/Email Block -->
       <tr>
         <td><table border="0" cellspacing="0" cellpadding="2" class="infoBox">
+            <tr>
+              <td class="main"><b>Order Date:</b></td>
+              <td class="main"><?php echo tep_draw_input_field('day', (isset($order->info['date_purchased']) ? substr($order->info['date_purchased'], 8, 2) : ''), 'size="2" maxlength="2" class="cal-TextBox"') . tep_draw_input_field('month', (isset($order->info['date_purchased']) ? substr($order->info['date_purchased'], 5, 2) : ''), 'size="2" maxlength="2" class="cal-TextBox"') . tep_draw_input_field('year', (isset($order->info['date_purchased']) ? substr($order->info['date_purchased'], 0, 4) : ''), 'size="4" maxlength="4" class="cal-TextBox"'); ?><a class="so-BtnLink" href="javascript:calClick();return false;" onmouseover="calSwapImg('BTN_date', 'img_Date_OVER',true);" onmouseout="calSwapImg('BTN_date', 'img_Date_UP',true);" onclick="calSwapImg('BTN_date', 'img_Date_DOWN');showCalendar('edit_order','dteWhen','BTN_date');return false;"><?php echo tep_image(DIR_WS_IMAGES . 'cal_date_up.gif', 'Calendar', '22', '17', 'align="absmiddle" name="BTN_date"'); ?></a></td>
+            </tr>
           <tr>
             <td class="main"><b><?php echo ENTRY_TELEPHONE_NUMBER; ?></b></td>
             <td class="main"><input name='update_customer_telephone' size='15' value='<?php echo $order->customer['telephone']; ?>'></td>
