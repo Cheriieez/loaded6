@@ -7,7 +7,7 @@
 
   DevosC, Developing open source Code
   http://www.devosc.com
-
+tep_draw_hidden_field("rm",2) 
   Copyright (c) 2003 osCommerce
   Copyright (c) 2004 DevosC.com
 
